@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/BWTheme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/ATARCE__Large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/ARARCE__Med.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scripts/UI/end_screen.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("QuitButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ReferenceRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("ReferenceRect:rect_size:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 700, -0.5, -503.849, 0.2, 84.39, 526.963, -0.1, 32.2486, 0.4, -8.59961 ),
+"times": PoolRealArray( 0, 0.7, 1 )
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ReferenceRect:rect_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 880, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ReferenceRect:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 20 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ReferenceRect:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 800, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ReferenceRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("ReferenceRect:rect_size:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ReferenceRect:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 20 ) ]
+}
+
+[node name="EndMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 900.0
+margin_bottom = 20.0
+rect_clip_content = true
+border_color = Color( 1, 0, 0, 0 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ReferenceRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -410.0
+margin_top = -50.0
+margin_right = 410.0
+margin_bottom = 50.0
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][wave amp=40 freq=5]Player 0 Wins!"
+text = "Player 0 Wins!"
+scroll_active = false
+
+[node name="PlayButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.0
+margin_top = 32.0
+margin_right = 198.0
+margin_bottom = 98.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.0
+margin_top = 147.0
+margin_right = 198.0
+margin_bottom = 213.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Quit To Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Enter = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
